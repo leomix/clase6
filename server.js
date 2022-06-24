@@ -1,7 +1,7 @@
 const express = require('express')
 const contenedor = require("./contenedor.js");
 module.exports = contenedor;
-let contenedor1 = new contenedor('productos.txt')
+let contenedor1 = new contenedor('productos.txt') 
 
 const app = express()
 
