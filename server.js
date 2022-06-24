@@ -14,10 +14,11 @@ const server = app.listen(PORT,()=>{
 server.on('error',error=> console.log(`error en el servidor ${error}`))
 
 app.get('/productos',async (req,res)=>{
-    res.send({productos: await contenedor1.getAll()})
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify(await contenedor1.getAll(), null, 4));
 })
 
 app.get('/productoRandom',async (req,res)=>{
-    res.send({producto: await contenedor1.getRandom()})
+    res.header("Content-Type",'application/json');
+    res.send(JSON.stringify(await contenedor1.getRandom(), null, 4));
 })
-
